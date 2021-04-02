@@ -22,11 +22,29 @@ $(document).ready(function() {
     function initEvents() {
 
         // Click surrounding fn
-        $('.surroundings__map').on('click', function() {
-            $('.building').css('opacity', '0');
+        $('.surroundings').on('click', function() {
+            resetEvents();
+            $(this).addClass('surroundings--selected');
+            $('.navBar').removeClass('.navBar--hidden');
+        })
+
+        $('.level').on('click', function() {
+            resetEvents();
+            $(this).addClass('level--selected');
+            $('.navBar').removeClass('.navBar--hidden');
+        })
+
+        $('.nav__btn--all-levels').on('click', function() {
+            resetEvents();
+            $('.navBar').addClass('.navBar--hidden');
         })
 
 
+    }
+
+    function resetEvents() {
+        $('.surroundings').removeClass('surroundings--selected');
+        $('.level').removeClass('.level--selected');
     }
 
     init();
