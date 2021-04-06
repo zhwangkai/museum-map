@@ -38,6 +38,22 @@ button:focus {
     height: 100vh;
 }
 
+.headbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 1.5em 1em;
+}
+
+.icon {
+    display: block;
+    width: 1em;
+    height: 1em;
+    margin: 0 auto;
+    fill: currentColor;
+}
+
 .surroundings,
 .building {
     transform-style: preserve-3d;
@@ -55,6 +71,13 @@ button:focus {
     width: 192vmin;
     height: 128vmin;
     margin: -64vmin 0 0 -96vmin;
+    transition: transform 0.3s;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.surroundings__map--selected {
+    transform: translateZ(15vmin) rotate3d(0, 0, 1, 20deg);
 }
 
 .building {
@@ -66,19 +89,14 @@ button:focus {
     transform-style: preserve-3d;
 }
 
-.building--selected {
-    -webkit-transform: translateZ(15vmin) rotate3d(0, 0, 1, 20deg);
-    /* go to center */
-    transform: translateZ(15vmin) rotate3d(0, 0, 1, 20deg);
-}
-
-
 .museum {
+    position: relative;
     width: 100%;
     height: 100%;
 }
 
-.level {
+.level,
+.surroundings__map {
     position: relative;
     width: 100%;
     height: 100%;
@@ -92,13 +110,37 @@ button:focus {
     transform: translateZ(15vmin) rotate3d(0, 0, 1, 20deg);
 }
 
+.level__pins {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
 .navBar {
     position: absolute;
     top: 0;
     right: 0;
+    width: 2em;
+    height: 2em;
+    z-index: 101;
     text-align: center;
+    background-color: #cccccc;
     -webkit-transition: opacity 0.8s;
     transition: opacity 0.8s;
+}
+
+.nav__btn--all-levels {
+    border: none;
+    padding: 2vmin 2vmin;
+}
+
+.nav__btn--all-levels:hover {
+    fill: white;
 }
 
 .navBar--hidden {

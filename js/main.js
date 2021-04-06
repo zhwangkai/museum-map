@@ -22,30 +22,40 @@ $(document).ready(function() {
     function initEvents() {
 
         // Click surrounding fn
-        $('.surroundings').on('click', function() {
-            resetEvents();
-            $(this).addClass('surroundings--selected');
-            $('.navBar').removeClass('.navBar--hidden');
-        })
+        // $('.surroundings').on('click', function() {
+        //     resetEvents();
+        //     $('.surroundings__map').addClass('surroundings__map--selected');
+        //     $('.navBar').removeClass('navBar--hidden');
+        //     $('.building').fadeOut('slow');
+        // })
 
+        //Click building level fn
         $('.level').on('click', function() {
             resetEvents();
             $(this).addClass('level--selected');
-            $('.navBar').removeClass('.navBar--hidden');
+            $('.navBar').removeClass('navBar--hidden');
+            $('.surroundings').fadeOut('slow');
         })
 
+        //Back to outside fn
         $('.nav__btn--all-levels').on('click', function() {
             resetEvents();
-            $('.navBar').addClass('.navBar--hidden');
+            $('.navBar').addClass('navBar--hidden');
+            $('.surroundings').fadeIn('slow');
+            $('.building').fadeIn('slow');
         })
 
-
     }
 
+    //Reset fn
     function resetEvents() {
-        $('.surroundings').removeClass('surroundings--selected');
-        $('.level').removeClass('.level--selected');
+        $('.surroundings__map').removeClass('surroundings__map--selected');
+        $('.surroundings').removeClass('surroundings--hidden');
+        $('.level').removeClass('level--selected');
+        $('.building').removeClass('building--hidden');
     }
 
+
+    //Init fn all the begain
     init();
 })
