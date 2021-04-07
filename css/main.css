@@ -89,6 +89,11 @@ button:focus {
     transform-style: preserve-3d;
 }
 
+.building--selected {
+    width: 80vmin;
+    margin: -28vmin 0 0 -35vmin;
+}
+
 .museum {
     position: relative;
     width: 100%;
@@ -122,6 +127,19 @@ button:focus {
     transform-style: preserve-3d;
 }
 
+.pin {
+    position: absolute;
+    width: 5.5vmin;
+    height: 8.25vmin;
+    margin: -8.25vmin 0 0 -2.25vmin; /* let the bottom tip be the reference point for individual coordinates */
+    -webkit-transform: rotateZ(-20deg) rotateZ(45deg) rotateX(-70deg);
+    transform: rotateZ(-20deg) rotateZ(45deg) rotateX(-70deg);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
 .btn__search {
     position: absolute;
     top: 1em;
@@ -147,14 +165,14 @@ button:focus {
     transition: opacity 0.8s;
 }
 
-.nav__btn--all-levels {
+.nav__btn--all-maps {
     border: none;
     padding: 2vmin 2vmin;
     background-color: #d7d7d7;
     fill: white;
 }
 
-.nav__btn--all-levels:hover {
+.nav__btn--all-maps:hover {
     fill: #cccccc;
 }
 

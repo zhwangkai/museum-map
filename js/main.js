@@ -33,12 +33,13 @@ $(document).ready(function() {
         $('.level').on('click', function() {
             resetEvents();
             $(this).addClass('level--selected');
+            $('.building').addClass('building--selected');
             $('.navBar').removeClass('navBar--hidden');
             $('.surroundings').fadeOut('slow');
         })
 
         //Back to outside fn
-        $('.nav__btn--all-levels').on('click', function() {
+        $('.nav__btn--all-maps').on('click', function() {
             resetEvents();
             $('.navBar').addClass('navBar--hidden');
             $('.surroundings').fadeIn('slow');
@@ -53,6 +54,7 @@ $(document).ready(function() {
         $('.surroundings').removeClass('surroundings--hidden');
         $('.level').removeClass('level--selected');
         $('.building').removeClass('building--hidden');
+        $('.building').removeClass('building--selected');
     }
 
 
